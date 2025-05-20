@@ -7,7 +7,7 @@ import { toast } from 'react-toastify';
 
 const Navbar = () => {
 const {user,logOut} = use(AuthContex);
-console.log(user)
+// console.log(user)
     const handleLogOut =() =>{
     logOut().then(() => {
       toast.error('LogOut Succesfully')
