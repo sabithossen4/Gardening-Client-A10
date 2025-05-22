@@ -4,7 +4,7 @@ import { AuthContex } from '../provider/AuthProvider';
 
 const TipDetails = () => {
   const {user} = use(AuthContex);
-  console.log(user)
+  // console.log(user)
   const data = useLoaderData();
   console.log(data);
   const {imageUrl,title,plantType,category,difficulty,availability,description} =data;

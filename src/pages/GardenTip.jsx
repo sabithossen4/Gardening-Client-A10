@@ -151,7 +151,7 @@ const GardenTip = () => {
           type="submit"
           className="bg-green-600 w-full mb-2 text-white px-4 py-2 rounded hover:bg-green-700 mb-10"
         >
-          Share Tip
+          Add Tips
         </button>
       </form>
     </div>

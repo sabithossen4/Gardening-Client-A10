@@ -3,7 +3,7 @@ import { Link, useLoaderData } from 'react-router';
 
 const BrowserTips = () => {
   const users = useLoaderData();
-  console.log(users)
+  // console.log(users)
   return (
       <div className="p-6">
       <h2 className="text-2xl font-bold mb-4"> Browse Garden Tips</h2>

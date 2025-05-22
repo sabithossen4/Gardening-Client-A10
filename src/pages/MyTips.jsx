@@ -7,7 +7,7 @@ const MyTips = () => {
   const { user } = use(AuthContex);
   // console.log(user.email)
   const [tips, setTips] = useState([]);
-  console.log(tips);
+  // console.log(tips);
 
   useEffect(() => {
     if (user?.email) {

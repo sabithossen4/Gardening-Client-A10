@@ -44,7 +44,9 @@ export const router = createBrowserRouter([
         loader: ({params}) => fetch(`http://localhost:3000/gardens/${params.id}`),
          Component: TipDetails,
          },
-         { path: "/update/:id", Component: UpdateTips, },
+         { path: "/update/:id",
+          loader: ({params}) => fetch(`http://localhost:3000/gardens/${params.id}`),
+          Component: UpdateTips, },
     ],
   },
 ]);
