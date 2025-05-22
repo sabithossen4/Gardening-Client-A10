@@ -1,5 +1,6 @@
 import React, { use, useEffect, useState } from "react";
 import { AuthContex } from "../provider/AuthProvider";
+import { Link } from "react-router";
 
 const MyTips = () => {
   const { user } = use(AuthContex);
@@ -16,7 +17,39 @@ const MyTips = () => {
   }, [user]);
   return (
     <div>
-      <h1>My Tips</h1>
+      <div className="p-4 max-w-6xl mx-auto">
+        <h2 className="text-3xl font-bold mb-4"> My Garden Tips</h2>
+        <table className="w-full table-auto">
+          <thead className="bg-green-100">
+            <tr>
+              <th className="p-2">Title</th>
+              <th className="p-2">Category</th>
+              <th className="p-2">Availability</th>
+              <th className="p-2">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {tips.map((tip) => (
+              <tr key={tip._id} className="text-center">
+                <td className="p-2 ">{tip.title}</td>
+                <td className="p-2 ">{tip.category}</td>
+                <td className="p-2 ">{tip.availability}</td>
+                <td className="p-2 space-x-2">
+                  <Link className="bg-green-500 hover:bg-green-600 text-white px-2 py-1 rounded">
+                    Details
+                  </Link>
+                  <Link className="bg-yellow-500 hover:bg-yellow-600 text-white px-2 py-1 rounded">
+                    Update
+                  </Link>
+                  <button className="bg-red-500 hover:bg-red-600 text-white px-2 py-1 rounded">
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };
