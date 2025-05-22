@@ -1,9 +1,22 @@
 import React from 'react';
+import Banner from '../components/Banner';
+import FeaturedGardeners from '../components/FeaturedGardeners';
+import { useLoaderData } from 'react-router';
+import TrendingTips from '../components/TrendingTips';
 
 const Home = () => {
+  const users = useLoaderData();
+  // console.log(users);
   return (
-    <div>
-      <h1 className='text-center'>This is Home Page</h1>
+    <div> 
+      <Banner></Banner>
+      <div  className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-5 py-16 bg-gray-200">
+        {
+        users.map(user => <FeaturedGardeners key={user._id} user={user}></FeaturedGardeners>)
+      }
+      </div>
+      <TrendingTips></TrendingTips>
+      
     </div>
   );
 };

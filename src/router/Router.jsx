@@ -10,6 +10,8 @@ import GardenTip from "../pages/GardenTip";
 import PrivateRoute from "../provider/PrivateRoute";
 import MyTips from './../pages/MyTips';
 import ErrorPage from './../pages/ErrorPage';
+import BrowserTips from "../pages/BrowserTips";
+import TipDetails from "../pages/TipDetails";
 
 
 export const router = createBrowserRouter([
@@ -18,15 +20,29 @@ export const router = createBrowserRouter([
     Component: HomeLayout ,
     errorElement: <ErrorPage></ErrorPage>,
     children: [
-      { path: "/", Component: Home, },
+      { index: true,
+        loader: () => fetch('http://localhost:3000/featured-gardeners'),
+        Component: Home, 
+      },
       { path: "/login", Component: Login, },
       { path: "/signup", Component: Signup, },
       { path: "/exploregardeners", Component: ExploreGardeners, },
-      { path: "/gardentip", Component: GardenTip, },
-      { path: "/mytips", element: 
+      { path: "/browsertips",
+        loader: () => fetch('http://localhost:3000/gardens'),
+         Component: BrowserTips, 
+        },
+      { path: "/gardentip", element: <PrivateRoute>
+        <GardenTip></GardenTip>
+      </PrivateRoute> , },
+      { path: "/mytips",               
+        element: 
       <PrivateRoute>
           <MyTips></MyTips>
       </PrivateRoute> , },
+      { path: "/browsertips/:id",
+        loader: ({params}) => fetch(`http://localhost:3000/gardens/${params.id}`),
+         Component: TipDetails,
+         },
     ],
   },
 ]);

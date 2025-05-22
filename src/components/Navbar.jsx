@@ -35,19 +35,25 @@ const {user,logOut} = use(AuthContex);
       <li><a>My Tips</a></li> 
       </ul>
     </div>
-    <div className='w-[50px]'><img className='w-full rounded-' src="/logo.webp" alt="" /></div>
-    <a className="btn btn-ghost text-xl">Gardening</a>
+    <div className='w-[100px]'><img className='w-full rounded-' src="/logo.webp" alt="" /></div>
+    <div className=" text-3xl font-bold flex justify-center items-center">
+      <span className=' text-green-900'>Garden</span>
+           
+      </div>
   </div>
   <div className="navbar-center  lg:flex">
-    <ul className="menu menu-horizontal px-1">
+    <ul className="menu menu-horizontal px-1 font-bold">
       <li><NavLink to={"/"}>Home</NavLink></li>          
-      <li><NavLink to={"/exploregardeners"}>Explore Gardeners</NavLink></li>
+      <li><NavLink to={"/exploregardeners"}> Explore Gardeners</NavLink></li>
+      
       {
         user ?
-        <li><NavLink to={"/gardentip"}>Share a Garden Tip</NavLink></li>:'' }
+        <li><NavLink to={"/gardentip"}> Share a Garden Tip</NavLink></li>:'' }
+        <li><NavLink to={"/browsertips"}> BrowserTips</NavLink></li>
         {user ?
       <li><NavLink to={"/mytips"}>My Tips</NavLink></li>:''
       }      
+      
     </ul>
   </div>
   <div className="navbar-end  gap-4">   
@@ -72,8 +78,8 @@ const {user,logOut} = use(AuthContex);
       </ul>
     </div>
 
-       : <div><Link to={'/signup'} className="btn btn-primary">SignUp</Link>
-      <Link to={'/login'} className="btn btn-primary">Login</Link></div>
+       : <div><Link to={'/signup'} className="mx-2 font-bold ">SignUp</Link>
+      <Link to={'/login'} className="mx-2 font-bold ">Login</Link></div>
     }
   </div>
 </div>

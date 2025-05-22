@@ -2,7 +2,7 @@ import React from "react";
 
 const ErrorPage = () => {
   return (
-    <div>
+    <div className="min-h-screen flex justify-center items-center">
       <div role="alert" className="alert alert-error">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -17,7 +17,7 @@ const ErrorPage = () => {
             d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
           />
         </svg>
-        <span>Error! Task failed successfully.</span>
+        <span>Error! 404 - Not Found.</span>
       </div>
     </div>
   );
