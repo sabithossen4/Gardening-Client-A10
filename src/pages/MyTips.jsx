@@ -1,6 +1,7 @@
 import React, { use, useEffect, useState } from "react";
 import { AuthContex } from "../provider/AuthProvider";
 import { Link } from "react-router";
+import Swal from "sweetalert2";
 
 const MyTips = () => {
   const { user } = use(AuthContex);
@@ -15,6 +16,40 @@ const MyTips = () => {
         .then((data) => setTips(data));
     }
   }, [user]);
+
+  const handleDelete = (id) => {  
+
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:3000/gardens/${id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+            if (data.deletedCount) {
+              const remainingUsers = tips.filter((tip) => tip._id !== id);
+              setTips(remainingUsers);
+
+              // TODO Delete user from firebase
+
+              Swal.fire({
+                title: "Deleted!",
+                text: "Your user has been deleted.",
+                icon: "success",
+              });
+            }
+          });
+      }
+    });
+  };
   return (
     <div>
       <div className="p-4 max-w-6xl mx-auto">
@@ -35,13 +70,15 @@ const MyTips = () => {
                 <td className="p-2 ">{tip.category}</td>
                 <td className="p-2 ">{tip.availability}</td>
                 <td className="p-2 space-x-2">
-                  <Link className="bg-green-500 hover:bg-green-600 text-white px-2 py-1 rounded">
-                    Details
-                  </Link>
-                  <Link className="bg-yellow-500 hover:bg-yellow-600 text-white px-2 py-1 rounded">
+                  
+                  <Link to={`/update/${tip._id}`}  className="bg-yellow-500 hover:bg-yellow-600 text-white px-2 py-1 rounded">
+                    
                     Update
                   </Link>
-                  <button className="bg-red-500 hover:bg-red-600 text-white px-2 py-1 rounded">
+                  <button
+                    onClick={() => handleDelete(tip._id)}
+                    className="btn bg-red-500 hover:bg-red-600 text-white px-2 py-1 rounded"
+                  >
                     Delete
                   </button>
                 </td>

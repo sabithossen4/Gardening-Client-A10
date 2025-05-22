@@ -3,7 +3,6 @@ import { createBrowserRouter } from "react-router";
 import HomeLayout from "../layout/HomeLayout";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
-import Signup from "../pages/Signup";
 import ExploreGardeners from "../pages/ExploreGardeners";
 import GardenTip from "../pages/GardenTip";
 
@@ -12,6 +11,8 @@ import MyTips from './../pages/MyTips';
 import ErrorPage from './../pages/ErrorPage';
 import BrowserTips from "../pages/BrowserTips";
 import TipDetails from "../pages/TipDetails";
+import UpdateTips from './../pages/UpdateTips';
+import Signup from './../pages/Signup';
 
 
 export const router = createBrowserRouter([
@@ -25,7 +26,7 @@ export const router = createBrowserRouter([
         Component: Home, 
       },
       { path: "/login", Component: Login, },
-      { path: "/signup", Component: Signup, },
+      { path: "/signup", Component: Signup },
       { path: "/exploregardeners", Component: ExploreGardeners, },
       { path: "/browsertips",
         loader: () => fetch('http://localhost:3000/gardens'),
@@ -43,6 +44,7 @@ export const router = createBrowserRouter([
         loader: ({params}) => fetch(`http://localhost:3000/gardens/${params.id}`),
          Component: TipDetails,
          },
+         { path: "/update/:id", Component: UpdateTips, },
     ],
   },
 ]);
