@@ -1,12 +1,89 @@
-# React + Vite
+#  Gardening Community & Resource Hub
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-stack MERN application for garden lovers! Share tips, discover expert gardeners, ask plant care questions, and explore upcoming gardening events.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🔗 Domain Site
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+👉 [Domain](https://assignment-10-89f5a.web.app/)
+
+
+---
+
+## ✨ Key Features
+
+- 🔐 **Authentication (Firebase)**
+  - Email/password & Google login system
+  - Password strength validation on register
+  - SweetAlert/toast notifications for feedback
+  - User photo, tooltip name & logout from navbar
+
+- 🌱 **CRUD Tips System**
+  - Add, browse, edit, delete garden tips
+  - Support for public/hidden tips
+  - Dynamic difficulty, category, image URL, etc.
+  - Tip details page with like functionality
+
+- 🧑‍🌾 **Explore Gardeners**
+  - See all gardener profiles with details: age, experience, tips count
+  - Dynamic card view with responsive design
+
+- 🏡 **Home Page Sections**
+  - 🌄 Banner slider with 3 gardening events (SwiperJS)
+  - 👩‍🌾 Featured Active Gardeners (6 shown from DB)
+  - 📈 Top Trending Tips based on like count
+  - 📝 Two additional custom gardening sections
+
+- 🎯 **Challenge Features**
+  - 🔘 Dark/Light theme toggle (daisyUI)
+  - 🧠 Tip filtering by difficulty (easy/medium/hard)
+  - 👍 Like button updates `totalLiked` in DB
+  - 🔥 Integrations:
+    - Lottie React (animated visuals)
+    - React Awesome Reveal (scroll animations)
+    - React Tooltip (hover info)
+    - React Simple Typewriter (animated headers)
+
+---
+
+## 🛠️ Tech Stack
+
+- **Frontend:** React.js, Tailwind CSS, DaisyUI, React Router
+- **Backend:** Node.js, Express.js, MongoDB Atlas
+- **Auth & Hosting:** Firebase Authentication, Firebase Hosting
+- **Other Libraries:** SwiperJS, Lottie React, Toastify, SweetAlert, Typewriter, Tooltip, Awesome Reveal
+
+---
+
+## 📱 Responsiveness
+
+✅ 100% Responsive  
+✅ Mobile-first design  
+✅ Smooth experience on mobile, tablet, and desktop
+
+---
+
+## 🧠 Environment & Deployment
+
+- **Client Hosted on:** Firebase  
+- **Server Hosted on:** Vercel  
+- **.env File Includes:**
+  - Firebase Config
+  - MongoDB URI
+- ✅ All environment variables are secured and **not pushed to GitHub**
+
+---
+
+## 🧪 Extra Features
+
+- ✅ Custom 404 Page
+- ✅ Loader Spinner while fetching data
+- ✅ SweetAlert confirmation before deletion
+- ✅ Reload-safe private routes (using Firebase `onAuthStateChanged`)
+
+---
+
+## 🧭 Project Structure
+

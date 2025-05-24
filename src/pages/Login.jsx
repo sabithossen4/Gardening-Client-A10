@@ -34,7 +34,12 @@ const Login = () => {
     if (!/[a-z]/.test(password)) {
       setEmailError("Password must 1 lowercase letter.");
       return;
-    } else {
+    } 
+    if (!/[!@#$%^&*()_+\-=\[\]{};':\"\\|,.<>\/?]/.test(password)) {
+      setEmailError("Password must 1 special character.");
+      return;
+    } 
+    else {
       setEmailError("");
     }
 
