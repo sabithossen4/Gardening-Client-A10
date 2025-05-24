@@ -69,13 +69,17 @@ const {user,logOut} = use(AuthContex);
     {
       user ? 
 
-      <div className="dropdown">
-      <div tabIndex={0} role="button" className=" cursor-pointer">
+      <div className="dropdown ">
+      <div tabIndex={0} role="button" className=" cursor-pointer tooltip tooltip-bottom"
+      data-tip={user.displayName}
+      >
       
       
 
       <img className='rounded-full max-w-[50px] ' src={`${user.photoURL? user.photoURL : '/user.png'
-      }`}/>
+      }`}
+      title={user.displayName || "No Name"} // Tooltip fallback
+      />
 
       </div>
       <ul
