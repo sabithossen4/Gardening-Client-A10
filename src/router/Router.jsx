@@ -21,7 +21,7 @@ export const router = createBrowserRouter([
     errorElement: <ErrorPage></ErrorPage>,
     children: [
       { index: true,
-        loader: () => fetch('http://localhost:3000/featured-gardeners'),
+        loader: () => fetch('https://assignment-10-server-tau-peach.vercel.app/featured-gardeners'),
         hydrateFallbackElement : <Loading></Loading>,
         Component: Home, 
       },
@@ -30,7 +30,7 @@ export const router = createBrowserRouter([
       { path: "/exploregardeners",
          Component: ExploreGardeners, },
       { path: "/browsertips",
-        // loader: () => fetch('http://localhost:3000/gardens'),
+        // loader: () => fetch('https://assignment-10-server-tau-peach.vercel.app/gardens'),
         // hydrateFallbackElement : <Loading></Loading>,
          Component: BrowserTips, 
         },
@@ -43,14 +43,14 @@ export const router = createBrowserRouter([
           <MyTips></MyTips>
       </PrivateRoute> , },
       { path: "/browsertips/:id",
-        loader: ({params}) => fetch(`http://localhost:3000/gardens/${params.id}`),
+        loader: ({params}) => fetch(`https://assignment-10-server-tau-peach.vercel.app/gardens/${params.id}`),
         hydrateFallbackElement : <Loading></Loading>,
          element: <PrivateRoute>
           <TipDetails></TipDetails>
          </PrivateRoute>,
          },
          { path: "/update/:id",
-          loader: ({params}) => fetch(`http://localhost:3000/gardens/${params.id}`),
+          loader: ({params}) => fetch(`https://assignment-10-server-tau-peach.vercel.app/gardens/${params.id}`),
           hydrateFallbackElement : <Loading></Loading>,
           Component: UpdateTips, },
     ],

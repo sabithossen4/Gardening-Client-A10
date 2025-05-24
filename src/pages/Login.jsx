@@ -41,7 +41,7 @@ const Login = () => {
     signIn(email, password)
       .then((result) => {
         const user = result.user;
-        console.log(user);
+        // console.log(user);
         navigate(`${location.state ? location.state : "/"}`);
         toast.success("Login Successfully");
       })
@@ -57,7 +57,7 @@ const Login = () => {
     googleSignIn()
     .then(result => {
       const user = result.user;
-        console.log(user);
+        // console.log(user);
       navigate(`${location.state ? location.state : "/"}`);
       toast.success("Google SignIn Successfully");
     })

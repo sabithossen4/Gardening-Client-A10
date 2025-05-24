@@ -7,7 +7,7 @@ const TipDetails = () => {
   const {user} = use(AuthContex);
   // console.log(user)
   const data = useLoaderData();
-  console.log(data);
+  // console.log(data);
   const {_id,imageUrl,title,plantType,category,difficulty,availability,description,totalLiked = 0} =data;
   const [likes, setLikes] = useState(totalLiked);
   const [isLiked, setIsLiked] = useState(false);
@@ -18,7 +18,7 @@ const TipDetails = () => {
     const updatedLikes = likes + 1;
 
     try {
-      const res = await fetch(`http://localhost:3000/gardens/${_id}`, {
+      const res = await fetch(`https://assignment-10-server-tau-peach.vercel.app/gardens/${_id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'

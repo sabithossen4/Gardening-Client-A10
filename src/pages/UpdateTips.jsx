@@ -15,11 +15,11 @@ const UpdateTips = () => {
     const form = e.target;
         const formData = new FormData(form);
         const newGardenTip = Object.fromEntries(formData.entries())
-        console.log(newGardenTip);
+        // console.log(newGardenTip);
 
 
 
-            fetch(`http://localhost:3000/gardens/${_id}`, {
+            fetch(`https://assignment-10-server-tau-peach.vercel.app/gardens/${_id}`, {
             method: 'PUT', 
             headers: {
                 'content-type': 'application/json'

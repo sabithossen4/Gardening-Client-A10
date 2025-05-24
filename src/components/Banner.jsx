@@ -4,13 +4,17 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
 import { FaInstagram } from "react-icons/fa";
+import { Fade, Zoom } from 'react-awesome-reveal';
 
 const Banner = () => {
   return (
     <div className=" mx-auto h-[800px] ">
       <Swiper modules={[Navigation]} navigation loop={true} className="h-full ">
-        <SwiperSlide >
-          <div className="h-full  bg-cover bg-center  bg-[url('/garden-4.jpeg')]">
+
+        
+
+         <SwiperSlide >
+          <Zoom triggerOnce className="h-full  bg-cover bg-center  bg-[url('/garden-4.jpeg')]">
             <div className=" p-6 rounded-md text-left text-green-900 pl-24 pt-32 ">
               <h2 className="text-6xl font-bold mb-3 ">
                 Spring <span className="text-amber-900">Garden</span> Festival
@@ -36,11 +40,13 @@ const Banner = () => {
                 </a>
               </button>
             </div>
-          </div>
+          </Zoom>
         </SwiperSlide>
+        
+       
 
         <SwiperSlide>
-          <div className="h-full  bg-cover bg-center  bg-[url('/garden-2.jpg')]">
+          <Zoom triggerOnce className="h-full  bg-cover bg-center  bg-[url('/garden-2.jpg')]">
             <div className=" p-6 rounded-md text-left text-amber-200 pl-24 pt-32 ">
               <h2 className="text-6xl font-bold mb-3">Composting Workshop</h2>
               <p className="mb-4 py-10 text-xl">
@@ -63,11 +69,11 @@ const Banner = () => {
                 </a>{" "}
               </button>
             </div>
-          </div>
+          </Zoom>
         </SwiperSlide>
 
         <SwiperSlide>
-          <div className="h-full  bg-cover bg-center  bg-[url('/garden-1.jpeg')]">
+          <Zoom triggerOnce className="h-full  bg-cover bg-center  bg-[url('/garden-1.jpeg')]">
             <div className=" p-6 rounded-md text-left text-amber-200 pl-24 pt-32 ">
               <h2 className="text-6xl font-bold mb-3">
                 Balcony Garden Contest
@@ -93,7 +99,7 @@ const Banner = () => {
                 </a>
               </button>
             </div>
-          </div>
+          </Zoom>
         </SwiperSlide>
       </Swiper>
     </div>

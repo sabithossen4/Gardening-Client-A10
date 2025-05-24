@@ -6,7 +6,7 @@ const BrowserTips = () => {
   const [difficulty, setDifficulty] = useState("");
 
   useEffect(() => {
-    let url = 'http://localhost:3000/gardens'; // Change to your server URL
+    let url = 'https://assignment-10-server-tau-peach.vercel.app/gardens'; // Change to your server URL
     if (difficulty) {
       url += `?difficulty=${difficulty}`;
     }

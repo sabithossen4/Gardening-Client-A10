@@ -6,7 +6,7 @@ const TrendingTips = () => {
   // console.log(trending)
 
   useEffect(() =>{
-    fetch("http://localhost:3000/trending")
+    fetch("https://assignment-10-server-tau-peach.vercel.app/trending")
     .then(res => res.json())
     .then(data => setTrending(data))
   },[] );

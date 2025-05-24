@@ -11,7 +11,7 @@ const MyTips = () => {
 
   useEffect(() => {
     if (user?.email) {
-      fetch(`http://localhost:3000/mygardens/${user.email}`)
+      fetch(`https://assignment-10-server-tau-peach.vercel.app/mygardens/${user.email}`)
         .then((res) => res.json())
         .then((data) => setTips(data));
     }
@@ -29,7 +29,7 @@ const MyTips = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:3000/gardens/${id}`, {
+        fetch(`https://assignment-10-server-tau-peach.vercel.app/gardens/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
