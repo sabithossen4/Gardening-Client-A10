@@ -10,7 +10,7 @@ const Home = () => {
   return (
     <div> 
       <Banner></Banner>
-      <div  className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-5 py-16 bg-gray-200">
+      <div  className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-5 py-16">
         {
         users.map(user => <FeaturedGardeners key={user._id} user={user}></FeaturedGardeners>)
       }

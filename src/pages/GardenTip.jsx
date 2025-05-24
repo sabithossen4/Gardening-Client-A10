@@ -30,7 +30,7 @@ const GardenTip = () => {
       }
 
   return (
-    <div className='w-10/12 mx-auto'>
+    <div className='w-8/12 mx-auto'>
       <h1 className='font-bold text-4xl text-center py-10'>Share a Garden Tip</h1>
       <form onSubmit={handelAddGardenTip} >
 
@@ -81,15 +81,7 @@ const GardenTip = () => {
         ></textarea>
         </div>
 
-        <div>
-          <label className="label">Image</label><br />
-        <input
-          type="text"
-          name="imageUrl"
-          placeholder="Image URL"          
-          className=" input input-secondary"
-        />
-        </div>
+        
 
         <div>
           <label className="label">Category</label><br />
@@ -106,9 +98,7 @@ const GardenTip = () => {
         </select>
         </div>
 
-       
-        </div><br />
-        <div>
+       <div>
          <label className="label">Availability</label><br />
          <select
           name="availability"
@@ -118,11 +108,19 @@ const GardenTip = () => {
           <option>Public</option>
           <option>Hidden</option>
         </select>
-       </div><br />
+       </div>
 
-         
-          <div className="grid grid-cols-2  justify-center  gap-10 items-center">
-             <div>
+          <div className="col-span-2">
+          <label className="label" >Image</label><br />
+        <input
+          type="text"
+          name="imageUrl"
+          placeholder="Image URL"          
+          className=" input input-secondary "
+        />
+        </div>
+
+       <div>
           <label className="label font-bold">Name</label><br />
          <input
           type="text"
@@ -133,7 +131,7 @@ const GardenTip = () => {
           required
         />
         </div>
-           <div>
+        <div>
           <label className="label font-bold">Email</label><br />
          <input
           type="text"
@@ -144,8 +142,11 @@ const GardenTip = () => {
           required
         />
         </div>
-          </div>
-        <br />
+        </div><br />
+        
+
+         
+          
 
          <button
           type="submit"

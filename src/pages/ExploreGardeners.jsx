@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { AiFillLike } from "react-icons/ai";
 
 const ExploreGardeners = () => {
   const [users,setUsers] =useState([]);
@@ -10,19 +11,40 @@ const ExploreGardeners = () => {
     .then(data => setUsers(data))
   },[])
   return (
-    <div>
-      <h1>Explore Gardeners</h1>
+    <div className='grid grid-cols-3 gap-4'>     
       {
         users.map(user => (<div  key={user._id}>
-      <div className="border rounded-xl p-4 shadow-md  bg-gray-50 border-0 pb-6">
-          <img src={user.profilePic} alt={user.name} className="w-96  rounded-xl mx-auto h-[250px]" />
-          <h3 className=" text-center text-emerald-950 text-2xl font-bold pt-4">{user.name}</h3>
-          <div className='flex justify-around pt-2'>
-            
-          <p className="text-center text-xs font-bold text-gray-900 btn rounded-2xl">{user.location}</p>
-          <p className="text-center textarea-sm text-green-900 font-bold btn rounded-2xl">{user.specialty}</p>
-          </div>
-        </div>
+
+
+
+      <div className="card bg-base-100  shadow-sm border-1">
+  <figure>
+    <img
+      className='h-[250px] w-96'
+      src={user.profilePic}
+      alt="Not Image" />
+  </figure>
+  <div className="card-body">
+    <h2 className=" flex justify-between items-center">
+      <div className='text-2xl font-bold'>{user.name}</div>
+      <div className='font-semibold'>{user.experience}</div>
+      
+    </h2>
+    <p>Specialty : {user.specialty}</p>
+    <p>Gender : {user.gender}</p>
+    <p> <span>Age : </span>{user.age}</p>
+    <div className="card-actions  justify-between items-center">
+      <div className="badge font-bold">{user.location}</div>
+      <div>{user.status}</div>
+      <div className="badge font-black"><AiFillLike />{user.totalSharedTips}</div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
     </div>))
       }
     </div>

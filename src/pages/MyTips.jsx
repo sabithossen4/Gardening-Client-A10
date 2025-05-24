@@ -55,8 +55,8 @@ const MyTips = () => {
       <div className="p-4 max-w-6xl mx-auto">
         <h2 className="text-3xl font-bold mb-4"> My Garden Tips</h2>
         <table className="w-full table-auto">
-          <thead className="bg-green-100">
-            <tr>
+          <thead className="">
+            <tr className="border-2">
               <th className="p-2">Title</th>
               <th className="p-2">Category</th>
               <th className="p-2">Availability</th>
@@ -65,7 +65,7 @@ const MyTips = () => {
           </thead>
           <tbody>
             {tips.map((tip) => (
-              <tr key={tip._id} className="text-center">
+              <tr key={tip._id} className="text-center border-2">
                 <td className="p-2 ">{tip.title}</td>
                 <td className="p-2 ">{tip.category}</td>
                 <td className="p-2 ">{tip.availability}</td>

@@ -98,16 +98,7 @@ const UpdateTips = () => {
         ></textarea>
         </div>
 
-        <div>
-          <label className="label">Image</label><br />
-        <input
-          type="text"
-          name="imageUrl"
-          defaultValue={imageUrl}
-          placeholder="Image URL"          
-          className=" input input-secondary"
-        />
-        </div>
+        
 
         <div>
           <label className="label">Category</label><br />
@@ -124,9 +115,6 @@ const UpdateTips = () => {
           <option>Balcony Gardening</option>
         </select>
         </div>
-
-       
-        </div><br />
         <div>
          <label className="label">Availability</label><br />
          <select
@@ -138,11 +126,19 @@ const UpdateTips = () => {
           <option>Public</option>
           <option>Hidden</option>
         </select>
-       </div><br />
-
-         
-          <div className="grid grid-cols-2  justify-center  gap-10 items-center">
-             <div>
+       </div>
+        <div className='col-span-2'>
+          <label className="label">Image</label><br />
+        <input
+          type="text"
+          name="imageUrl"
+          defaultValue={imageUrl}
+          placeholder="Image URL"          
+          className=" input input-secondary"
+        />
+        </div>
+        
+         <div>
           <label className="label font-bold">Name</label><br />
          <input
           type="text"
@@ -153,7 +149,7 @@ const UpdateTips = () => {
           required
         />
         </div>
-           <div>
+          <div>
           <label className="label font-bold">Email</label><br />
          <input
           type="text"
@@ -164,7 +160,13 @@ const UpdateTips = () => {
           required
         />
         </div>
-          </div>
+
+       
+        </div><br />
+        
+
+         
+          
         <br />
 
          <button

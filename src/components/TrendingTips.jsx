@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 
 const TrendingTips = () => {
   const [trending, setTrending] = useState([]);
-  console.log(trending)
+  
+  // console.log(trending)
 
   useEffect(() =>{
     fetch("http://localhost:3000/trending")
@@ -20,13 +21,17 @@ const TrendingTips = () => {
         {trending.map((tips) => (
           <div
             key={tips._id}
-            className="bg-green-50 rounded-2xl shadow p-4 hover:shadow-lg transition"
+            className="bg-gray-200 rounded-2xl shadow p-4 hover:shadow-lg transition border-"
           >
             <h3 className="text-xl font-semibold text-green-800">{tips.title}</h3>
             <p className="text-sm text-gray-600 mt-2">{tips.description}</p>
             <div className="mt-4 text-sm text-green-600">
-              <span className="font-medium">By:</span> {tips.author}
+              <span className="font-medium"></span> {tips.author}
               <span className="ml-4 font-medium">Category:</span> {tips.category}
+            </div>
+            <div className="flex justify-between mt-2 text-sm text-blue-600 font-medium items-center">
+               <span>Total Likes: {tips.totalLiked || 0}</span>
+                 <span>❤️</span>
             </div>
           </div>
         ))}
