@@ -6,7 +6,7 @@ const GardenTools = () => {
       console.log(users)
     
       useEffect(() =>{
-        fetch('http://localhost:3000/garden-tools')
+        fetch('https://assignment-10-server-tau-peach.vercel.app/garden-tools')
         .then(res => res.json())
         .then(data => setUsers(data))
       },[])

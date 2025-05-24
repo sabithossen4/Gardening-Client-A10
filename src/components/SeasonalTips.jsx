@@ -6,7 +6,7 @@ const SeasonalTips = () => {
     console.log(users)
   
     useEffect(() =>{
-      fetch('http://localhost:3000/seasonal-tips')
+      fetch('https://assignment-10-server-tau-peach.vercel.app/seasonal-tips')
       .then(res => res.json())
       .then(data => setUsers(data))
     },[])
