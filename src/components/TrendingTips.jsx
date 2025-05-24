@@ -23,7 +23,7 @@ const TrendingTips = () => {
             key={tips._id}
             className="bg-gray-200 rounded-2xl shadow p-4 hover:shadow-lg transition border-"
           >
-            <h3 className="text-xl font-semibold text-green-800">{tips.title}</h3>
+            <h3 className="text-2xl font-bold text-green-800">{tips.title}</h3>
             <p className="text-sm text-gray-600 mt-2">{tips.description}</p>
             <div className="mt-4 text-sm text-green-600">
               <span className="font-medium"></span> {tips.author}

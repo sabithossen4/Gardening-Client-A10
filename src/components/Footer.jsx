@@ -4,7 +4,7 @@ import { FaFacebook, FaTwitter, FaInstagram, FaLeaf, FaGithub } from "react-icon
 const Footer = () => {
   return (
     <div>
-      <footer className="bg-green-100 text-green-900 pt-10 pb-6 px-4 md:px-16  border-t border-green-300">
+      <footer className=" text-green-900 pt-10 pb-6 px-4 md:px-16  border-t border-green-300">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Contact Info */}
         <div>
