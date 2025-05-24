@@ -32,13 +32,16 @@ const {user,logOut} = use(AuthContex);
       </div>
       <ul
         tabIndex={0}
-        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-          
-        <li><a>Home</a></li> 
-             
-      <li><a>Explore Gardeners</a></li>
-      <li><a>Share a Garden Tip</a></li>
-      <li><a>My Tips</a></li> 
+        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">          
+        <li><NavLink to={"/"}>Home</NavLink></li>              
+      <li><NavLink to={"/exploregardeners"}> Explore Gardeners</NavLink></li>
+      {
+        user ?
+        <li><NavLink to={"/gardentip"}> Share a Garden Tip</NavLink></li>:'' }
+        <li><NavLink to={"/browsertips"}> BrowserTips</NavLink></li>
+        {user ?
+      <li><NavLink to={"/mytips"}>My Tips</NavLink></li>:''
+      } 
       </ul>
     </div>
     
@@ -50,7 +53,7 @@ const {user,logOut} = use(AuthContex);
            
       </div>
   </div>
-  <div className="navbar-center  lg:flex">
+  <div className="navbar-center hidden  lg:flex">
     <ul className="menu menu-horizontal px-1 font-bold">
       <li><NavLink to={"/"}>Home</NavLink></li>          
       <li><NavLink to={"/exploregardeners"}> Explore Gardeners</NavLink></li>
@@ -86,7 +89,7 @@ const {user,logOut} = use(AuthContex);
         tabIndex={0}
         className="text-amber-100  dropdown-content  rounded-box   mt-3     right-0  shadow  ">
                    
-        <button onClick={handleLogOut}><Link to={'/'} className="cursor-pointer hover:bg-gray-500 btn">LogOut</Link></button>  
+        <button onClick={handleLogOut}><Link to={'/'} className="cursor-pointer hover:bg-gray-500 btn">LogOut</Link></button>
            
       </ul>
     </div>
