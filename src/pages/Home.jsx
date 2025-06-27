@@ -14,13 +14,6 @@ const Home = () => {
     <div> 
       <Tyewriter></Tyewriter>
       <Banner></Banner>
-
-      
-      
-      
-
-
-       
       <div>
         <h1 className=' font-bold pb-2 text-4xl text-center text-green-700 mt-10'>Featured Gardeners</h1>
         <div  className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-5 pb-16">

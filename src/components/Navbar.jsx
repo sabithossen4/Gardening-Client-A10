@@ -5,8 +5,6 @@ import { toast } from 'react-toastify';
 import { GiBurningTree } from "react-icons/gi";
 import { themeChange } from 'theme-change';
 
-
-
 const Navbar = () => {
 const {user,logOut} = use(AuthContex);
 // console.log(user)
@@ -32,7 +30,7 @@ const {user,logOut} = use(AuthContex);
       </div>
       <ul
         tabIndex={0}
-        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">          
+        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow ">          
         <li><NavLink to={"/"}>Home</NavLink></li>              
       <li><NavLink to={"/exploregardeners"}> Explore Gardeners</NavLink></li>
       {
@@ -94,7 +92,7 @@ const {user,logOut} = use(AuthContex);
       </ul>
     </div>
 
-       : <div><Link to={'/signup'} className="mx-2 font-bold ">SignUp</Link>
+       : <div><Link to={'/signup'} className="mx-2 font-bold">SignUp</Link>
       <Link to={'/login'} className="mx-2 font-bold ">Login</Link></div>
     }
 

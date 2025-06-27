@@ -28,6 +28,10 @@ const Signup = () => {
       setEmailError('Password should be more 5 character');
       return;
     }
+     if (!/[!@#$%^&*()\-_=+[{\]}\\|;:'",<.>/?]+/.test(password)) {
+      setEmailError("Password must 1 special character.");
+      return;
+    }
      if(!/[a-z]/.test(password)){
       setEmailError('Password must 1 uppercase letter.');
       return;

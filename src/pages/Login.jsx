@@ -27,6 +27,10 @@ const Login = () => {
       setEmailError("Password should be more 5 character");
       return;
     }
+    if (!/[!@#$%^&*()\-_=+[{\]}\\|;:'",<.>/?]+/.test(password)) {
+      setEmailError("Password must 1 special character.");
+      return;
+    }  
     if (!/[A-Z]/.test(password)) {
       setEmailError("Password must 1 uppercase letter.");
       return;
@@ -35,10 +39,7 @@ const Login = () => {
       setEmailError("Password must 1 lowercase letter.");
       return;
     } 
-    if (!/[!@#$%^&*()_+\-=\[\]{};':\"\\|,.<>\/?]/.test(password)) {
-      setEmailError("Password must 1 special character.");
-      return;
-    } 
+     
     else {
       setEmailError("");
     }
